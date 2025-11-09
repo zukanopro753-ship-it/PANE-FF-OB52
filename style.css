@@ -1,0 +1,207 @@
+/* Nền mặc định tĩnh */
+body {
+  background-color: #222;
+  transition: background-color 1s ease;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Animation cầu vồng nhấp nháy 7 màu */
+@keyframes rainbowBlink {
+  0% {background-color: #FF0000;}
+  14% {background-color: #FF7F00;}
+  28% {background-color: #FFFF00;}
+  42% {background-color: #00FF00;}
+  57% {background-color: #0000FF;}
+  71% {background-color: #4B0082;}
+  85% {background-color: #9400D3;}
+  100% {background-color: #FF0000;}
+}
+
+/* Khi thêm class này thì nền cầu vồng chạy */
+body.rainbow-bg {
+  animation: rainbowBlink 7s linear infinite;
+}
+
+/* Container chính */
+.container {
+  position: relative;
+  z-index: 1;
+  background: rgba(0,0,0,0.6);
+  padding: 20px 30px;
+  border-radius: 15px;
+  width: 320px;
+  box-shadow: 0 0 15px rgba(255,255,255,0.3);
+  text-align: center;
+}
+
+/* Tiêu đề nhấp nháy */
+.blinker {
+  animation: blinkerAnim 1.5s linear infinite;
+  font-weight: 900;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+@keyframes blinkerAnim {
+  50% {opacity: 0;}
+}
+
+/* Input text */
+input[type="text"] {
+  width: 70%;
+  padding: 8px 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  margin-right: 5px;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus {
+  box-shadow: 0 0 8px #fff;
+}
+
+/* Button */
+button {
+  padding: 8px 14px;
+  font-weight: bold;
+  background: #222;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #555;
+}
+
+/* Logout button style */
+.logout-btn {
+  margin-top: 15px;
+  background-color: #c0392b;
+  color: #fff;
+}
+
+.logout-btn:hover {
+  background-color: #e74c3c;
+}
+
+/* Các phần trong container */
+.section {
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+/* Ẩn phần tử */
+.hidden {
+  display: none;
+}
+
+/* Khung log */
+.log {
+  height: 70px;
+  overflow-y: auto;
+  background: rgba(255 255 255 / 0.2);
+  padding: 6px 10px;
+  border-radius: 10px;
+  text-align: left;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Danh sách chức năng */
+.func-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+/* Nhãn checkbox chức năng */
+.func-list label {
+  cursor: pointer;
+  user-select: none;
+  background: rgba(255 255 255 / 0.1);
+  padding: 8px 12px;
+  border-radius: 12px;
+  min-width: 120px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.3s ease;
+  font-weight: 600;
+}
+
+.func-list input[type="checkbox"] {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.func-list label:hover {
+  background: rgba(255 255 255 / 0.3);
+}
+
+/* Bubbles container */
+#bubble-container {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Bóng bong bóng */
+.bubble {
+  position: absolute;
+  bottom: -50px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  opacity: 0.6;
+  animation-name: riseUp;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes riseUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-120vh) scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* Toast thông báo */
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: 600;
+  box-shadow: 0 0 8px rgba(255,255,255,0.3);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.toast.show {
+  opacity: 1;
+  pointer-events: auto;
+}

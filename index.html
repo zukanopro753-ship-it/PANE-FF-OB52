@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NAGUKU NỨNG CAC 👙</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1 class="blinker">NAGUKU NỨNG CAC 👙</h1>
+    <div id="log" class="log"></div>
+
+    <div id="login-section" class="section">
+      <input
+        id="key-input"
+        type="text"
+        placeholder="Nhập key (ví dụ: NARU-7)"
+        autocomplete="off"
+      />
+      <button id="btn-validate">XÁC NHẬN</button>
+    </div>
+
+    <div id="status-section" class="section hidden">
+      <p>Trạng thái key: <span id="key-status">OFFLINE</span></p>
+      <p>Thời gian còn lại: <span id="countdown">00:00:00</span></p>
+    </div>
+
+    <div id="functions-section" class="section hidden">
+      <h2>CHỌN CHỨC NĂNG</h2>
+      <div class="func-list">
+        <label><input type="checkbox" data-func="aimbot" /><span>🎯 AIMBOT</span></label>
+        <label><input type="checkbox" data-func="aimlock" /><span>🔒 AIMLOCK</span></label>
+        <label><input type="checkbox" data-func="nhay" /><span>⚡ NHẠY</span></label>
+        <label><input type="checkbox" data-func="sensitivity" /><span>🎚️ SENSITIVITY</span></label>
+        <label><input type="checkbox" data-func="buff120hz" /><span>💨 BUFF MÀN 120HZ</span></label>
+        <label><input type="checkbox" data-func="norecoi_sensi" /><span>🛡️ NORECOI & SENSI</span></label>
+        <label><input type="checkbox" data-func="mouse_touch" /><span>🖱️ MOUSE TOUCH</span></label>
+      </div>
+      <button id="btn-logout" class="logout-btn">ĐĂNG XUẤT KEY</button>
+    </div>
+
+    <div id="bubble-container"></div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
